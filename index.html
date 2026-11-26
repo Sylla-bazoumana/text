@@ -9,18 +9,31 @@
 </head>
 <body>
   <main class="panel">
-    <header>
-      <h1>Mes tâches</h1>
-      <p id="progress" role="status"></p>
+    <header class="header">
+      <div>
+        <h1>Mes tâches</h1>
+        <p id="progress" role="status"></p>
+      </div>
+      <button id="theme" type="button" aria-pressed="false">Mode sombre</button>
     </header>
 
     <form id="task-form">
       <label for="task-input">Nouvelle tâche</label>
       <div class="form-row">
         <input id="task-input" name="task" type="text" required>
-        <button class="add" type="submit">Ajouter</button>
+        <button class="primary" type="submit">Ajouter</button>
       </div>
     </form>
+
+    <div class="toolbar">
+      <fieldset id="filters">
+        <legend class="sr-only">Filtrer les tâches</legend>
+        <label><input type="radio" name="filter" value="all" checked><span>Toutes</span></label>
+        <label><input type="radio" name="filter" value="active"><span>En cours</span></label>
+        <label><input type="radio" name="filter" value="completed"><span>Terminées</span></label>
+      </fieldset>
+      <p id="remaining" role="status"></p>
+    </div>
 
     <p id="storage-message" role="status" hidden></p>
     <p id="empty" class="empty">Aucune tâche pour le moment.</p>
